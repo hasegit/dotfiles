@@ -1,0 +1,102 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+${custom.home}\
+[](bg:none fg:medium)\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$rust\
+$golang\
+$php\
+$fill\
+$status\
+$cmd_duration\
+$time\
+\n\
+$character\
+[](bg:none fg:medium)\
+ """
+
+palette = "british_green"
+
+[palettes.british_green]
+darkest = "#4b1d8a" 
+dark    = "#552599"
+medium  = "#602ba9"
+light   = "#6a35b8"
+text2 = "#ddaadd"
+text = "#ba94e8"
+
+[fill]
+symbol = '-'
+style = 'text dimmed'
+
+[custom.home]
+style = "fg:text bg:medium"
+command = "$HOME/.config/zsh/functions/get_icon"
+format = '[ $output ]($style)'
+when = true
+
+[directory]
+style = "fg:text bg:none"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:text bg:none)]($style)'
+
+[git_status]
+style = "bg:none"
+format = '[$all_status ]($style)'
+untracked = '[+${count}](bold bg:none fg:#ff9999)'
+modified = '[~${count}](bold bg:none fg:#9999ff)'
+deleted = '[-${count}](bold bg:none fg:#ff99ff)'
+conflicted = '[!${count}](bold bg:none fg:#ff6666)'
+staged = '[✓${count}](bold bg:none fg:#99ff99)'
+
+[nodejs]
+symbol = ""
+style = "fg:text bg:none"
+format = '[ $symbol $version ]($style)'
+
+[lua]
+symbol = "󰢱"
+style = "fg:text bg:none"
+format = '[ $symbol $version ]($style)'
+
+[rust]
+symbol = ""
+style = "fg:text bg:none"
+format = '[ $symbol $version ]($style)'
+
+[golang]
+symbol = ""
+style = "fg:text bg:none"
+format = '[ $symbol $version ]($style)'
+
+[status]
+disabled = false
+style = 'fg:#ff00ff bg:none dimmed'
+format = '[ $common_meaning$signal_name\($int$signal_number\)]($style) '
+
+[cmd_duration]
+min_time = 1
+style = "fg:text bg:none"
+format = '[ 󱦟 $duration]($style)'
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+style="fg:text bg:none"
+format = '[   $time ]($style)'
+
+[character]
+success_symbol = '[ ](bold fg:#00ff00 bg:medium)'
+error_symbol = '[](bold fg:#ff00ff bg:medium) '
+format = '[[ $symbol](fg:text bg:medium)]($style)'
+

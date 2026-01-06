@@ -1,0 +1,21 @@
+#!/bin/zsh
+case "${PWD}" in
+  "${HOME}")
+    echo -n " "
+    ;;
+  "${HOME}/Documents")
+    echo -n "󰈙"
+    ;;
+  "${HOME}/Downloads")
+    echo -n ""
+    ;;
+  "${HOME}/Music")
+    echo -n " "
+    ;;
+  "${HOME}/Pictures")
+    echo -n " "
+    ;;
+  *)
+    echo -n "󰝰"
+    ;;
+esac

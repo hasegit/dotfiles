@@ -1,0 +1,15 @@
+# 各種Pluginの説明
+- neo-tree
+  - エクスプローラーの表示
+- which-key
+  - leaderキー(space)を押した時のヘルプ的なもの
+- telescope
+  - fuzzy-finder
+- trouble
+  - LSPが検出したエラーやワーニングを一覧表示
+- colorscheme
+  - tokyonightを入れている
+- lualine
+  - ステータスとかを下に表示
+- treesitter
+  - Parser生成ツール

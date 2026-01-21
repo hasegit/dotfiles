@@ -16,7 +16,7 @@ $cmd_duration\
 $time\
 \n\
 $character\
-[](bg:none fg:medium)\
+[ ](bg:none fg:medium)\
  """
 
 palette = "british_green"

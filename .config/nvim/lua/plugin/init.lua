@@ -1,0 +1,7 @@
+require("plugin.nvim-lspconfig")
+require("plugin.which-key")
+require("plugin.nvim-treesitter")
+require("plugin.blink-cmp")
+require("plugin.mini-pairs")
+require("plugin.mini-surround")
+require("plugin.mini-indentscope")

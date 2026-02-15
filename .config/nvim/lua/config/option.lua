@@ -1,0 +1,61 @@
+-- Leader Key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- Background
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+
+-- linenumber
+vim.opt.relativenumber = true
+vim.opt.number = true
+
+-- cursorline
+vim.opt.cursorline = true
+vim.api.nvim_set_hl(0, "CursorLine", {
+  bg = "NONE",
+  underline = true,
+  ctermbg = "NONE",
+})
+
+-- StatusLine
+vim.opt.laststatus = 0
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
+
+-- Bottom
+vim.opt.showcmd = false
+vim.opt.ruler = false
+
+-- Behavior
+vim.opt.clipboard:append("unnamedplus,unnamed") -- share clipboard with OS
+vim.opt.mouse = "a"
+
+-- Indentation
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.scrolloff = 3
+
+-- Search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = false -- Don't highlight search results
+vim.opt.incsearch = true
+
+-- Visual
+vim.opt.signcolumn = "yes" -- Prevent layout shift by always showing sign column
+
+-- File
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
+vim.opt.autoread = true
+vim.opt.autowrite = false
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99

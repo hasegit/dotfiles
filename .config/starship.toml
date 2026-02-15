@@ -1,102 +1,120 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-
+# 
 format = """
+[╭─](fg:light bg:none)\
+[](fg:darkest bg:none)\
 ${custom.home}\
-[](bg:none fg:medium)\
+[](fg:darkest bg:dark)\
 $directory\
+[](fg:dark bg:medium)\
 $git_branch\
 $git_status\
+[ ](fg:medium bg:light)\
 $nodejs\
+$lua\
 $rust\
 $golang\
-$php\
+$pulumi\
+$azure\
+[](fg:light bg:none)\
 $fill\
 $status\
 $cmd_duration\
 $time\
 \n\
+[╰─](fg:light bg:none)\
 $character\
-[ ](bg:none fg:medium)\
  """
 
-palette = "british_green"
+palette = "purple"
 
-[palettes.british_green]
-darkest = "#4b1d8a" 
-dark    = "#552599"
-medium  = "#602ba9"
-light   = "#6a35b8"
-text2 = "#ddaadd"
-text = "#ba94e8"
+[palettes.purple]
+darkest = "#8a44ff" 
+dark    = "#9c61ff"
+medium  = "#af7dff"
+light   = "#d0bfff"
+text = "#efefff"
+text2 = "#8a44ff"
 
 [fill]
 symbol = '-'
-style = 'text dimmed'
+style = 'light dimmed'
 
 [custom.home]
-style = "fg:text bg:medium"
+style = "fg:text bg:darkest"
 command = "$HOME/.config/zsh/functions/get_icon"
 format = '[ $output ]($style)'
 when = true
 
 [directory]
-style = "fg:text bg:none"
+style = "fg:text bg:dark"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:text bg:none)]($style)'
+style = "fg:text bg:medium"
+format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:none"
+style = "bg:medium"
 format = '[$all_status ]($style)'
-untracked = '[+${count}](bold bg:none fg:#ff9999)'
-modified = '[~${count}](bold bg:none fg:#9999ff)'
-deleted = '[-${count}](bold bg:none fg:#ff99ff)'
-conflicted = '[!${count}](bold bg:none fg:#ff6666)'
-staged = '[✓${count}](bold bg:none fg:#99ff99)'
+untracked = '[+${count}](bold fg:#ffccf0 bg:medium)'
+modified = '[~${count}](bold fg:#e5dbff bg:medium)'
+deleted = '[-${count}](bold fg:#ff9999 bg:medium)'
+conflicted = '[!${count}](bold fg:#ff6666 bg:medium)'
+staged = '[✓${count}](bold fg:#99ff99 bg:medium)'
 
 [nodejs]
-symbol = ""
-style = "fg:text bg:none"
-format = '[ $symbol $version ]($style)'
+symbol = " "
+style = "fg:#6E9E58 bg:light"
+format = '[$symbol$version ]($style)'
 
 [lua]
-symbol = "󰢱"
-style = "fg:text bg:none"
-format = '[ $symbol $version ]($style)'
+symbol = "󰢱 "
+style = "fg:blue bg:light"
+format = '[$symbol$version ]($style)'
 
 [rust]
-symbol = ""
-style = "fg:text bg:none"
-format = '[ $symbol $version ]($style)'
+symbol = " "
+style = "fg:red bg:light"
+format = '[$symbol$version ]($style)'
 
 [golang]
-symbol = ""
-style = "fg:text bg:none"
-format = '[ $symbol $version ]($style)'
+symbol = " "
+style = "fg:text2 bg:light"
+format = '[$symbol$version ]($style)'
+
+[pulumi]
+symbol = " "
+style = "fg:#E27680 bg:light"
+format = '[$symbol$stack ]($style)'
+
+[azure]
+disabled = false
+format = '[$symbol($subscription) ]($style)'
+symbol = '󰠅 '
+style = "fg:#3376CD bg:light"
 
 [status]
 disabled = false
-style = 'fg:#ff00ff bg:none dimmed'
+style = 'fg:#ff6699 bg:none'
 format = '[ $common_meaning$signal_name\($int$signal_number\)]($style) '
 
 [cmd_duration]
 min_time = 1
-style = "fg:text bg:none"
+style = "fg:dark bg:none"
 format = '[ 󱦟 $duration]($style)'
 
 [time]
 disabled = false
 time_format = "%H:%M:%S"
-style="fg:text bg:none"
+style="fg:dark bg:none"
 format = '[   $time ]($style)'
 
 [character]
-success_symbol = '[ ](bold fg:#00ff00 bg:medium)'
-error_symbol = '[](bold fg:#ff00ff bg:medium) '
-format = '[[ $symbol](fg:text bg:medium)]($style)'
+success_symbol = '[>](fg:light)'
+error_symbol = '[×](bold fg:#ff49a0)'
+format = '$symbol '
 

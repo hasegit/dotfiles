@@ -1,0 +1,5 @@
+require("config.ui")
+require("config.command")
+require("config.lsp")
+require("config.option")
+require("config.keymap")

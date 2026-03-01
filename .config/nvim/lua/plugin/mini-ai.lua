@@ -52,8 +52,4 @@
   - dan( - delete around next ()
   - vil" - select inside last ""
 ]]
-vim.pack.add({
-  'https://github.com/nvim-mini/mini.ai',
-  version = main
-})
-require("mini.ai").setup()
+require("mini.ai").setup({})

@@ -43,5 +43,7 @@ return {
     { key = 'z', mods = 'LEADER', action = act.TogglePaneZoomState },
     -- close pane
     { key = 'x', mods = 'LEADER', action = act.CloseCurrentPane { confirm = true} },
+    -- Copy mode
+    { key = 'c', mods = 'LEADER', action = act.ActivateCopyMode },
 	},
 }

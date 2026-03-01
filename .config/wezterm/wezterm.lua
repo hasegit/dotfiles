@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local function get_git_status(path)
   local success, stdout, stderr = wezterm.run_child_process({
-    'git', '-C', path, 'status', '--porcelain=2', '--branch'
+    'git', '-C', path, 'status', '--porcelain=2', '-u', '-b'
   })
   local branch = ""
   local conflicted = 0
@@ -61,7 +61,7 @@ local function get_git_status(path)
     table.insert(result, wezterm.nerdfonts.oct_diff_removed .. " " .. deleted)
   end
   if renamed > 0 then
-    table.insert(result, wezterm.nerdfonts.oct_diff_renamed .. " ".. renamed)
+    table.insert(result, wezterm.nerdfonts.oct_diff_renamed .. " " .. renamed)
   end
   if modified > 0 then
     table.insert(result, wezterm.nerdfonts.oct_diff_modified .. " " .. modified)
@@ -170,7 +170,16 @@ config.colors = {
   split = "#8a44ff"
 }
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local title = wezterm.nerdfonts.fa_waze .. " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 2)
+
+  -- Nvimの時はアイコンを消す
+  local pane = tab.active_pane
+  local process_name = pane.foreground_process_name or ""
+  local prefix = wezterm.nerdfonts.fa_waze .. "  "
+  if process_name:match('nvim') then
+    prefix = ""
+  end
+
+  local title = prefix .. wezterm.truncate_right(tab.active_pane.title, max_width - 2)
   local foreground = tab.is_active and "#ddccff" or "#ba99ff"
   local intensity = tab.is_active and "Bold" or "Normal"
   local underline = tab.is_active and "Double" or "None"

@@ -6,17 +6,14 @@ format = """
 ${custom.home}\
 [](fg:darkest bg:dark)\
 $directory\
-[](fg:dark bg:medium)\
-$git_branch\
-$git_status\
-[ ](fg:medium bg:light)\
+[ ](fg:dark bg:medium)\
 $nodejs\
 $lua\
 $rust\
 $golang\
 $pulumi\
 $azure\
-[](fg:light bg:none)\
+[](fg:medium bg:none)\
 $fill\
 $status\
 $cmd_duration\
@@ -68,34 +65,34 @@ staged = '[✓${count}](bold fg:#99ff99 bg:medium)'
 
 [nodejs]
 symbol = " "
-style = "fg:#6E9E58 bg:light"
+style = "fg:#6E9E58 bg:medium"
 format = '[$symbol$version ]($style)'
 
 [lua]
 symbol = "󰢱 "
-style = "fg:blue bg:light"
+style = "fg:blue bg:medium"
 format = '[$symbol$version ]($style)'
 
 [rust]
 symbol = " "
-style = "fg:red bg:light"
+style = "fg:red bg:medium"
 format = '[$symbol$version ]($style)'
 
 [golang]
 symbol = " "
-style = "fg:text2 bg:light"
+style = "fg:text2 bg:medium"
 format = '[$symbol$version ]($style)'
 
 [pulumi]
 symbol = " "
-style = "fg:#E27680 bg:light"
+style = "fg:#E27680 bg:medium"
 format = '[$symbol$stack ]($style)'
 
 [azure]
 disabled = false
 format = '[$symbol($subscription) ]($style)'
 symbol = '󰠅 '
-style = "fg:#3376CD bg:light"
+style = "fg:blue bg:medium"
 
 [status]
 disabled = false

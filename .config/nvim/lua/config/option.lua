@@ -1,25 +1,22 @@
--- Leader Key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
--- Background
-vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-
 -- linenumber
-vim.opt.relativenumber = true
 vim.opt.number = true
+vim.opt.relativenumber = true
+
+-- cursor
+vim.opt.guicursor =
+"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175" -- cursor blinking and settings
 
 -- cursorline
 vim.opt.cursorline = true
 vim.api.nvim_set_hl(0, "CursorLine", {
   bg = "NONE",
+  sp = "#ffffff",
   underline = true,
   ctermbg = "NONE",
 })
 
 -- StatusLine
 vim.opt.laststatus = 0
-vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
 
 -- Bottom
 vim.opt.showcmd = false
@@ -41,11 +38,21 @@ vim.opt.scrolloff = 3
 -- Search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.hlsearch = false -- Don't highlight search results
+vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- Visual
-vim.opt.signcolumn = "yes" -- Prevent layout shift by always showing sign column
+vim.opt.termguicolors = true
+-- vim.cmd.colorscheme("default")
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" }) -- background transparent
+vim.opt.winblend = 0
+vim.opt.pumblend = 0
+vim.opt.signcolumn = "yes"        -- Prevent layout shift by always showing sign column
+vim.opt.fillchars:append("eob: ") -- Remove ~ on end of buffer
+vim.opt.cmdheight = 0
+
+-- Terminal
+vim.opt.title = true
 
 -- File
 vim.opt.backup = false

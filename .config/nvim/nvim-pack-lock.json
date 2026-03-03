@@ -15,11 +15,6 @@
       "src": "https://github.com/nvim-mini/mini.ai.git",
       "version": "'main'"
     },
-    "mini.animate": {
-      "rev": "0365de8b69331c25d0d0d7573407a7dc7719e578",
-      "src": "https://github.com/nvim-mini/mini.animate",
-      "version": "'main'"
-    },
     "mini.indentscope": {
       "rev": "0308f949f31769e509696af5d5f91cebb2159c69",
       "src": "https://github.com/nvim-mini/mini.indentscope",
@@ -40,6 +35,16 @@
       "src": "https://github.com/nvim-mini/mini.surround",
       "version": "'main'"
     },
+    "noice.nvim": {
+      "rev": "7bfd942445fb63089b59f97ca487d605e715f155",
+      "src": "https://github.com/folke/noice.nvim",
+      "version": "'main'"
+    },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim",
+      "version": "'main'"
+    },
     "nvim-lspconfig": {
       "rev": "92ee7d42320edfbb81f3cad851314ab197fa324a",
       "src": "https://github.com/neovim/nvim-lspconfig"
@@ -57,6 +62,11 @@
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim.git",
       "version": "'master'"
+    },
+    "smear-cursor.nvim": {
+      "rev": "c85bdbb25db096fbcf616bc4e1357bd61fe2c199",
+      "src": "https://github.com/sphamba/smear-cursor.nvim",
+      "version": "'main'"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",

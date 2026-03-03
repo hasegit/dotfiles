@@ -3,8 +3,9 @@ require("copilot").setup({
     auto_trigger = true,
     hide_during_completion = false,
     keymap = {
-      accept = "<Tab>",
-    }
+      accept = "<C-a>",
+      accept_word = "<C-w>",
+    },
   },
   filetypes = {
     markdown = true,

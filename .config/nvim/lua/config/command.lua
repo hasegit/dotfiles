@@ -41,6 +41,15 @@ vim.api.nvim_create_autocmd({ "VimEnter", "BufEnter", "BufFilePost" }, {
   end,
 })
 
+-- ファイル保存前に自動でフォーマットを実行
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    -- LSPが有効な場合のみフォーマットを実行
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
 -- パッケージ管理のコマンドを定義
 vim.api.nvim_create_user_command("Packdel", function(opts)
   vim.pack.del({ opts.args })

@@ -49,7 +49,12 @@ vim.opt.winblend = 0
 vim.opt.pumblend = 0
 vim.opt.signcolumn = "yes"        -- Prevent layout shift by always showing sign column
 vim.opt.fillchars:append("eob: ") -- Remove ~ on end of buffer
+vim.opt.shortmess:append("sS")    -- Don't give "search hit BOTTOM, continuing at TOP" messages.
 vim.opt.cmdheight = 0
+vim.opt.showmode = false
+vim.opt.showcmd = false
+-- vim.opt.display:remove("msgsep")  -- Remove the message separator line
+-- vim.api.nvim_set_hl(0, "MsgSeparator", { bg = "NONE" })
 
 -- Terminal
 vim.opt.title = true
@@ -62,6 +67,8 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 vim.opt.autoread = true
 vim.opt.autowrite = false
+vim.opt.fixendofline = true
+vim.opt.endofline = true
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"

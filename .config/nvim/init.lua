@@ -18,10 +18,14 @@ vim.pack.add {
   { src = 'https://github.com/nvim-mini/mini.surround',         version = 'main' },
   -- Show Indent
   { src = 'https://github.com/nvim-mini/mini.indentscope',      version = 'main' },
-  -- Animation
-  { src = 'https://github.com/nvim-mini/mini.animate',          version = 'main' },
   -- Picker
   { src = 'https://github.com/nvim-mini/mini.pick',             version = 'main' },
+  -- Animation
+  { src = 'https://github.com/sphamba/smear-cursor.nvim',       version = 'main' },
+  -- Noice dependency
+  { src = 'https://github.com/MunifTanjim/nui.nvim',            version = 'main' },
+  -- Enhanced messages, cmdline and popupmenu
+  { src = 'https://github.com/folke/noice.nvim',                version = 'main' },
   -- File Explorer
   { src = 'https://github.com/stevearc/oil.nvim',               version = 'master' },
   -- Copilot
@@ -31,3 +35,5 @@ vim.pack.add {
 -- Require
 require("config")
 require("plugin")
+
+vim.opt.cmdheight = 0
